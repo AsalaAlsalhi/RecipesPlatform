@@ -1,4 +1,4 @@
-🍽️ Recipes Platform
+# 🍽️ Recipes Platform
 Recipes Platform is a simple and intuitive web application designed for anyone who loves cooking and sharing food ideas.
 The platform allows users to create an account, publish their favorite recipes, explore others' creations, search for specific dishes, and rate recipes they’ve tried.
 
