@@ -1,0 +1,30 @@
+﻿@model IEnumerable<RecipePlatform.MVC.Models.RecipeDto>
+
+<h2>All Recipes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var recipe in Model)
+            {
+                <tr>
+                    <td>@recipe.Title</td>
+                    <td>@recipe.Description</td>
+                    <td>@recipe.CreatedDate.ToShortDateString()</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="3">No recipes found.</td></tr>
+        }
+    </tbody>
+</table>

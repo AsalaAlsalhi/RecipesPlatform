@@ -1,0 +1,31 @@
+﻿@model IEnumerable<RecipePlatform.Models.Entities.Recipe>
+
+<h2>All Recipes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recipe in Model)
+        {
+            <tr>
+                <td>@recipe.Title</td>
+                <td>@recipe.Description</td>
+                <td>@recipe.CreatedDate.ToShortDateString()</td>
+                <td>
+                    <a href="@Url.Action("Details", "Recipe", new { id = recipe.RecipeId })">View</a> |
+                    <a href="@Url.Action("Edit", "Recipe", new { id = recipe.RecipeId })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Recipe", new { id = recipe.RecipeId })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Recipe")" class="btn btn-primary">Create New Recipe</a>
